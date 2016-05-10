@@ -1,0 +1,39 @@
+plugins {
+    id "com.jfrog.bintray" version "1.6"
+}
+
+
+apply plugin: "java"
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+
+project.group = "com.github.cementovoz"
+project.version = "0.1"
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'io.reactivex:rxjava:1.1.2'
+}
+
+bintray {
+    user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    pkg {
+        repo = 'maven'
+        name = project.name
+        licenses = ['MIT']
+        publicDownloadNumbers = true
+        vcsUrl = 'https://github.com/cementovoz/rxfx.git'
+        githubRepo = 'cementovoz/rxfx'
+        issueTrackerUrl = 'https://github.com/cementovoz/rxfx/issues'
+        websiteUrl='https://github.com/cementovoz/rxfx'
+        version {
+            name = project.version
+            released = new Date()
+        }
+    }
+}
