@@ -1,6 +1,6 @@
 # rxfx
 
-[![Build Status](https://travis-ci.org/cementovoz/rxfx.svg?branch=master)](https://travis-ci.org/cementovoz/rxfx)
+[![Build Status](https://api.travis-ci.org/pelenthium/rxfx.svg?branch=master)](https://travis-ci.org/pelenthium/rxfx)
 
 Simple reactive extensions for JavaFX : 
 
